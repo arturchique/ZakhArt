@@ -11,12 +11,22 @@ class Product(models.Model):
     summary = models.TextField(max_length=200)
     genre = models.ForeignKey('Genre', on_delete=models.SET_NULL, null=True)
 
+    def __str__(self):
+        return self.title
+
 
 class Genre(models.Model):
     """Model to present genre"""
-    name = models.TextField(max_length=50)
+    name = models.CharField(max_length=50, null=True)
+
+    def __str__(self):
+        return self.name
 
 
 class Author(models.Model):
     """Model to present Author"""
-    name = models.CharField(max_length=50)
+    name = models.CharField(max_length=50, null=True)
+    genre = models.ManyToManyField('Genre', help_text="Выберите жанры, которые представляет автор")
+
+    def __str__(self):
+        return self.name
