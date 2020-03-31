@@ -14,7 +14,7 @@ class Product(models.Model):
 
 class Genre(models.Model):
     """Model to present genre"""
-    name = models.TextField
+    name = models.TextField(max_length=50)
 
 
 class Author(models.Model):
