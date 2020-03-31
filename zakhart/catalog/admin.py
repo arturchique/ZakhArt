@@ -12,7 +12,7 @@ class AuthorAdmin(admin.ModelAdmin):
 @admin.register(Product)
 class ProductAdmin(admin.ModelAdmin):
     list_display = ('title', 'author', 'genre')
-    fields = ['title', 'author', 'genre', 'summary', ]
+    fields = ['title', 'author', 'genre', 'summary', 'image_src']
 
 
 @admin.register(Genre)

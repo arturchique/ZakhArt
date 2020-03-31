@@ -10,6 +10,7 @@ class Product(models.Model):
     author = models.ForeignKey('Author', on_delete=models.SET_NULL, null=True)
     summary = models.TextField(max_length=200)
     genre = models.ForeignKey('Genre', on_delete=models.SET_NULL, null=True)
+    image_src = models.CharField(max_length=300, null=True)
 
     def __str__(self):
         return self.title

@@ -1,4 +1,6 @@
 {% extends "base_generic.html" %}
 {% block content %}
-<h1 class="d-flex justify-content-center">Захар не лох</h1>
+{% for ob in obj%}
+<h1 class="d-flex justify-content-center">{{ob.image_src}}</h1>
+{% endfor %}
 {% endblock %}

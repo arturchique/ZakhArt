@@ -1,12 +1,13 @@
 from django.shortcuts import render
+from .models import Product, Genre, Author
 
 
 def index(request):
-    zakhar = "lox"
+    obj = Product.objects.all()
     return render(
         request,
         'index.html',
         context={
-            'zakhar': zakhar,
+            'obj': obj,
         },
     )
