@@ -1,4 +1,23 @@
 {% extends "base_generic.html" %}
 {% block content %}
-{{link_list}}
+<p id = "array" class="arr">{{link_list}}</p>
+<img clas="image_good" id="para" src="#">
+    <script>
+       let str = document.getElementById('array').innerHTML;
+       str = str.slice(2,str.length -2);
+       let arr = str.split("', '");
+       let k =0;
+       let p = document.getElementById("para");
+       p.setAttribute("src", arr[k]);
+       k++;
+       setTimeout(function l(){
+            p.setAttribute("src", arr[k]);
+            k++;
+            if(k==arr.length){
+                k = 0;
+            }
+            setTimeout(l,4000);
+
+        },5000);
+    </script>
 {% endblock %}
