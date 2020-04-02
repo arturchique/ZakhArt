@@ -1,7 +1,7 @@
 {% extends "base_generic.html" %}
 {% block content %}
 <p id = "array" class="arr">{{link_list}}</p>
-<img clas="image_good" id="para" src="#">
+<a href="products/1"><img clas="image_good" id="para" src="#"></a>
     <script>
        let str = document.getElementById('array').innerHTML;
        str = str.slice(2,str.length -2);
@@ -20,4 +20,5 @@
 
         },5000);
     </script>
+
 {% endblock %}
