@@ -22,5 +22,13 @@ class ProductListView(generic.ListView):
     model = Product
 
 
+class AuthorListView(generic.ListView):
+    model = Author
+
+
 class ProductDetailView(generic.DetailView):
     model = Product
+
+
+class AuthorDetailView(generic.DetailView):
+    model = Author

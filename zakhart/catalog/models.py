@@ -31,7 +31,7 @@ class Genre(models.Model):
 class Author(models.Model):
     """Model to present Author"""
     name = models.CharField(max_length=50, null=True)
-    genre = models.ManyToManyField('Genre', help_text="Выберите жанры, которые представляет автор")
+    genre = models.ForeignKey('Genre', help_text="Выберите жанры, которые представляет автор", on_delete=models.SET_NULL, null=True)
 
     def __str__(self):
         return self.name
