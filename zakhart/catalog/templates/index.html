@@ -1,18 +1,24 @@
 {% extends "base_generic.html" %}
 {% block content %}
-<p id = "array" class="arr">{{link_list}}</p>
-<p>{{ url_list }}</p>
-<a href="products/1"><img clas="image_good" id="para" src="#"></a>
+<p id = "link_list" class="arr">{{link_list}}</p>
+<p class="arr" id="url_list">{{url_list}}</p>
+<a href="products/1" id="link_image"><img class="image_good" id="image" src="#"></a>
     <script>
-       let str = document.getElementById('array').innerHTML;
+       let str = document.getElementById('link_list').innerHTML;
        str = str.slice(2,str.length -2);
        let arr = str.split("', '");
+       let str2 = document.getElementById('url_list').innerHTML;
+       str2 = str2.slice(1,str2.length -1);
+       let arr2 = str2.split(", ");
        let k =0;
-       let p = document.getElementById("para");
-       p.setAttribute("src", arr[k]);
+       let img = document.getElementById("image");
+       img.setAttribute("src", arr[k]);
+       let a = document.getElementById("link_image");
+       a.setAttribute("href", "products/" + arr2[k]);
        k++;
        setTimeout(function l(){
-            p.setAttribute("src", arr[k]);
+            img.setAttribute("src", arr[k]);
+            a.setAttribute("href","products/" + arr2[k]);
             k++;
             if(k==arr.length){
                 k = 0;

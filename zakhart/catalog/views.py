@@ -5,7 +5,7 @@ from django.views import generic
 
 def index(request):
     link_list = [ob.image_src for ob in Product.objects.all()]
-    url_list = [ob.get_absolute_url for ob in Product.objects.all()]
+    url_list = [ob.id for ob in Product.objects.all()]
     product = Product.objects.all()
     return render(
         request,
