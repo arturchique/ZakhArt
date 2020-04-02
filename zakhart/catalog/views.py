@@ -18,5 +18,9 @@ def index(request):
     )
 
 
+class ProductListView(generic.ListView):
+    model = Product
+
+
 class ProductDetailView(generic.DetailView):
     model = Product
