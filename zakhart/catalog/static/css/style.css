@@ -1,8 +1,55 @@
+@font-face {
+// название шрифта(чтобы не запутаться лучше указать название папки со шрифтом)
+font-family: "ForestSmooth";
+// адрес шрифта и тип
+src: url("../fonts/ForestSmooth-Regular.ttf");
+}
+
+
+body,html{
+	padding: 0;
+	margin: 0;
+}
+a{
+	text-decoration: none;
+}
+.main_image{
+    height: 100vh;
+    width: 100vw;
+    margin-left: 0vw;
+    background: url(../photo/фон4.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: black;
+}
+.sign{
+    margin: 0;
+    padding:0;
+    display: flex;
+    list-style: none;
+    position: absolute;
+    left:40vw;
+    top: 2vh;
+    width: 20vw;
+    justify-content: space-between;
+}
+.sign li{
+    width: 50%;
+    text-align: center;
+}
+.sign li a{
+    color: white;
+    font-size: 3vh;
+    font-family: "ForestSmooth";
+     text-shadow: 5px 5px 10px black;
+}
+
 .arr{
     opacity: 0;
     display: none;
 }
 .image_good{
+    display: none;
     width:500px;
     height:500px;
 
