@@ -1,6 +1,8 @@
 from django.shortcuts import render
 from .models import Product, Genre, Author
 from django.views import generic
+from django.contrib.auth.forms import UserCreationForm
+from django.views.generic.edit import FormView
 
 
 def index(request):
@@ -24,6 +26,24 @@ def index(request):
             'author_list': author_list,
         },
     )
+
+
+class RegisterFormView(FormView):
+    form_class = UserCreationForm
+
+    # Ссылка, на которую будет перенаправляться пользователь в случае успешной регистрации.
+    # В данном случае указана ссылка на страницу входа для зарегистрированных пользователей.
+    success_url = "/accounts/login/"
+
+    # Шаблон, который будет использоваться при отображении представления.
+    template_name = "catalog/register.html"
+
+    def form_valid(self, form):
+        # Создаём пользователя, если данные в форму были введены корректно.
+        form.save()
+
+        # Вызываем метод базового класса
+        return super(RegisterFormView, self).form_valid(form)
 
 
 class ProductListView(generic.ListView):
