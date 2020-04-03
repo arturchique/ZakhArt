@@ -11,6 +11,7 @@ class Product(models.Model):
     summary = models.TextField(max_length=200)
     genre = models.ForeignKey('Genre', on_delete=models.SET_NULL, null=True)
     image_src = models.CharField(max_length=300, null=True)
+    cost = models.BigIntegerField(help_text='Укажите цену товара', null=True)
 
     def get_absolute_url(self):
         """Returns url to product page"""
