@@ -9,6 +9,7 @@ src: url("../fonts/ForestSmooth-Regular.ttf");
 body,html{
 	padding: 0;
 	margin: 0;
+	align: center;
 }
 a{
 	text-decoration: none;
@@ -30,6 +31,7 @@ a{
     position: absolute;
     left:40vw;
     top: 2vh;
+    z-index:100;
     width: 20vw;
     justify-content: space-between;
 }
@@ -45,13 +47,16 @@ a{
 }
 
 .arr{
-    opacity: 0;
     display: none;
 }
 .image_good{
     display: none;
-    width:500px;
-    height:500px;
+    width:30 vw;
+    height:30vw;
+    position: absolute;
+    top: 0;
+    left:0;
+    z-index: 200;
 
 }
 .circle{
@@ -63,4 +68,16 @@ a{
     top: 45vh;
     left: 45.5vw;
     box-shadow: 2px 2px 10px 2px rgb(0,0,0,0.4);
+    transition: all 1s linear;
+}
+#link_image{
+    position: absolute;
+    top: 50 vw;
+    left: 35vw;
+
+}
+.content{
+    margin: 0;
+    padding: 0;
+    z-index:0;
 }
