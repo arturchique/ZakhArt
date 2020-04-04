@@ -54,3 +54,13 @@ a{
     height:500px;
 
 }
+.circle{
+    border-radius: 50%;
+    background-color: #332928;
+    width: 9vw;
+    height: 9vw;
+    position:absolute;
+    top: 45vh;
+    left: 45.5vw;
+    box-shadow: 2px 2px 10px 2px rgb(0,0,0,0.4);
+}

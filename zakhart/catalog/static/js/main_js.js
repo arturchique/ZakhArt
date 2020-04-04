@@ -20,3 +20,6 @@
             setTimeout(l,4000);
 
         },5000);
+
+//анимация кнопки
+setTimeout(()=>document.getElementsByClassName('circle').style.height = '300px', 2000);
