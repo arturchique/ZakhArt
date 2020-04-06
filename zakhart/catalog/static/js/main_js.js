@@ -1,27 +1,23 @@
-       let str = document.getElementById('link_list').innerHTML;
-       str = str.slice(2,str.length -2);
-       let arr = str.split("', '");
-       let str2 = document.getElementById('url_list').innerHTML;
-       str2 = str2.slice(1,str2.length -1);
-       let arr2 = str2.split(", ");
-       let k =0;
-       let img = document.getElementById("image");
-       img.setAttribute("src", arr[k]);
-       let a = document.getElementById("link_image");
-       a.setAttribute("href", "products/" + arr2[k]);
-       k++;
-       setTimeout(function l(){
-            img.setAttribute("src", arr[k]);
-            a.setAttribute("href","products/" + arr2[k]);
-            k++;
-            if(k==arr.length){
-                k = 0;
-            }
-            setTimeout(l,4000);
+//взятие информации в массив
 
-        },5000);
+let str = document.getElementById('link_list').innerHTML;
+str = str.slice(2,str.length -2);
+let arr = str.split("', '");
+let str2 = document.getElementById('url_list').innerHTML;
+str2 = str2.slice(1,str2.length -1);
+let arr2 = str2.split(", ");
+let k =0;
+let img = document.getElementById("image");
+img.setAttribute("src", arr[k]);
+let a = document.getElementById("link_image");
+a.setAttribute("href", "products/" + arr2[k]);
+let block_img = document.getElementById("block_img");
+
+k++;
+
 
 //анимация кнопки
+
 let element = document.getElementById('circle');
 let my_time = 30;
 let img2 = document.getElementById('image');
@@ -55,7 +51,8 @@ function animationRound2(){
 let Idreq;
 Idreq = requestAnimationFrame(animationRound);
 
-//анимация раскрытия
+//анимация раскрытия и прочие при нажатии
+
 element.onclick = function al(){
         element.style.borderRadius = "0%";
         flag = true;
@@ -64,6 +61,32 @@ element.onclick = function al(){
         element.style.width = "70vw";
         element.style.left = "15vw";
         element.style.top = "0vh";
-        img2.style.display = "block";
+        setTimeout(function(){
+            block_img.style.display = "block";
+             block_img.style.opacity = "1";
+            //анимация смены фотографий
+        setTimeout(function r1(){
+            img.style.opacity = "0";
+            k++;
+            if(k==arr.length){
+                k = 0;
+            }
+            setTimeout(function r2(){
+                img.style.opacity = "1";
+                setTimeout(r1,3500);
+            },500);
+
+        },3500);
+        setTimeout(function l(){
+            img.setAttribute("src", arr[k]);
+            a.setAttribute("href","products/" + arr2[k]);
+            k++;
+            if(k==arr.length){
+                k = 0;
+            }
+            setTimeout(l,4000);
+
+        },4000);
+        },1500);
 
 }
