@@ -33,6 +33,7 @@ class Author(models.Model):
     """Model to present Author"""
     name = models.CharField(max_length=50, null=True)
     genre = models.ForeignKey('Genre', help_text="Выберите жанры, которые представляет автор", on_delete=models.SET_NULL, null=True)
+    bio = models.CharField(max_length=500, null=True)
 
     def __str__(self):
         return self.name
