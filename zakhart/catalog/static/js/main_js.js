@@ -12,9 +12,7 @@ img.setAttribute("src", arr[k]);
 let a = document.getElementById("link_image");
 a.setAttribute("href", "products/" + arr2[k]);
 let block_img = document.getElementById("block_img");
-
 k++;
-
 
 //анимация кнопки
 
@@ -63,30 +61,61 @@ element.onclick = function al(){
         element.style.top = "0vh";
         setTimeout(function(){
             block_img.style.display = "block";
-             block_img.style.opacity = "1";
+            block_img.style.opacity = "1";
             //анимация смены фотографий
-        setTimeout(function r1(){
+        setTimeout(function(){
             img.style.opacity = "0";
-            k++;
-            if(k==arr.length){
-                k = 0;
-            }
-            setTimeout(function r2(){
+            setTimeout(function(){
                 img.style.opacity = "1";
-                setTimeout(r1,3500);
             },500);
-
         },3500);
         setTimeout(function l(){
             img.setAttribute("src", arr[k]);
             a.setAttribute("href","products/" + arr2[k]);
-            k++;
+            ++k;
             if(k==arr.length){
                 k = 0;
             }
-            setTimeout(l,4000);
-
+            setTimeout(function(){
+                img.style.opacity = "0";
+                setTimeout(function(){
+                   img.style.opacity = "1";
+                },500);
+            },3500);
+            let timerid = setTimeout(l,4000);
         },4000);
-        },1500);
+ },1500);
 
 }
+
+
+let arrow1 = document.getElementById("arrow1");
+let arrow2 = document.getElementById("arrow2");
+
+arrow1.onclick = function forw_img(){
+    img.setAttribute("src", arr[k]);
+    a.setAttribute("href","products/" + arr2[k]);
+    ++k;
+    if(k==arr.length){
+        k = 0;
+    }
+}
+arrow2.onclick = function back_img(){
+    if(k==0){
+        k = arr.length-2;
+    }
+    else if(k==1){
+        k = arr.length-1;
+    }
+    else{
+        k-=2;
+    }
+    img.setAttribute("src", arr[k]);
+    a.setAttribute("href","products/" + arr2[k]);
+    k++;
+    if(k==arr.length){
+        k = 0;
+    }
+}
+
+
