@@ -5,8 +5,8 @@ from .models import Author, Product, Genre
 
 @admin.register(Author)
 class AuthorAdmin(admin.ModelAdmin):
-    list_display = ('name', )
-    fields = ['name', 'genre']
+    list_display = ('name', 'bio')
+    fields = ['name', 'genre', 'bio']
 
 
 @admin.register(Product)
