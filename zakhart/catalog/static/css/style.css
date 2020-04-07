@@ -75,11 +75,89 @@ a{
     left: 20vw;
     top: 7vw;
     background-color: white;
-    width: 41vw;
-    height: 33vw;
+    width: 40.5vw;
+    height: 32vw;
     opacity: 0;
     display: none;
 }
+.block_summary{
+    position: absolute;
+    left: 20vw;
+    top:39.4vw;
+    background-color: white;
+    width: 40.5vw;
+    height: 7vw;
+    display: none;
+    transition: all 1s linear;
+}
+.show{
+    position: absolute;
+    left: 0.15vw;
+    bottom:0.15vw;
+    background-color: #332928;
+    width: 40.2vw;
+    height: 2vw;
+    text-align: center;
+    line-height: 2vw;
+}
+.show:hover{
+    cursor: pointer;
+}
+.show p{
+    margin: 0;
+    padding: 0;
+    color: white;
+    font-family: "ForestSmooth";
+    font-size: 1vw;
+    text-shadow: 5px 5px 10px black;
+}
+.face_auth{
+    position: absolute;
+    top:0.5vw;
+    right:0.5vw;
+    width:3vw;
+    height:2.8vw;
+    background-color: #332928;
+    margin: 0;
+    padding: 0;
+}
+.cost{
+    color: #332928;
+    margin:0;
+    padding:0;
+    position:absolute;
+    top:0.6vw;
+    left: 0.5vw;
+    font-size: 1vw;
+    font-family: "ForestSmooth";
+}
+.summary{
+    color: #332928;
+    margin:0;
+    padding:0;
+    position:absolute;
+    top:3.5vw;
+    left: 0.5vw;
+    font-size: 1vw;
+    font-family: "ForestSmooth";
+}
+.follow_auth{
+    opacity: 0.6;
+    color: #332928;
+    margin:0;
+    padding:0;
+    position:absolute;
+    top:3.7vw;
+    right: 0.5vw;
+    font-size: 0.8vw;
+    font-family: "ForestSmooth";
+    transition: all 0.5s linear;
+}
+.follow_auth:hover{
+    opacity: 0.8;
+    cursor: pointer;
+}
+
 /*стрелка*/
 .arrow-1 {
     cursor: pointer;
