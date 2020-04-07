@@ -1,5 +1,6 @@
 from django.db import models
 from urllib.request import urlopen
+from django.contrib.auth.models import User
 from django.urls import reverse
 import uuid
 
@@ -31,6 +32,7 @@ class Genre(models.Model):
 
 class Author(models.Model):
     """Model to present Author"""
+    user = models.OneToOneField(User, on_delete=models.CASCADE, null=True)
     name = models.CharField(max_length=50, null=True)
     genre = models.ForeignKey('Genre', help_text="Выберите жанры, которые представляет автор", on_delete=models.SET_NULL, null=True)
     bio = models.CharField(max_length=500, null=True)

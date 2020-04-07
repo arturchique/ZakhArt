@@ -6,7 +6,7 @@ from .models import Author, Product, Genre
 @admin.register(Author)
 class AuthorAdmin(admin.ModelAdmin):
     list_display = ('name', 'bio')
-    fields = ['name', 'genre', 'bio']
+    fields = ['name', 'genre', 'bio', 'user']
 
 
 @admin.register(Product)
