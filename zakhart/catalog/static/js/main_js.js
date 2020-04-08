@@ -27,6 +27,10 @@ let summary = document.getElementById("sum");
 summary.innerHTML = summary_arr[k];
 let follow_a = document.getElementById("follow_a");
 follow_a.setAttribute("href","products/" + arr2[k]);
+let ava = document.getElementById("ava");
+let p1_show = document.getElementById("p1_sh");
+let p2_show = document.getElementById("p2_sh");
+let block_categories = document.getElementById("block_cat");
 
 k++;
 
@@ -78,6 +82,7 @@ element.onclick = function al(){
         setTimeout(function(){
             block_img.style.display = "block";
             block_sum.style.display = "block";
+            block_categories.style.display = "block";
             block_img.style.opacity = "1";
             //анимация смены фотографий
         setTimeout(function(){
@@ -146,13 +151,44 @@ arrow2.onclick = function back_img(){
     }
 }
 
+let show_flug = false;
 show.onclick = function full(){
-    block_sum.style.top = "7vw";
-    block_sum.style.height = "39.4vw";
-    block_sum.style.zIndex = "1000";
-    setTimeout(function(){
-        block_img.style.display = "none";
-    },1000);
+    if(!show_flug){
+        block_sum.style.top = "5.5vw";
+        block_sum.style.height = "39.4vw";
+        block_sum.style.zIndex = "1000";
+        setTimeout(function(){
+            block_img.style.display = "none";
+            show_flug = true;
+        },1000);
+        ava.style.width = "8vw";
+        ava.style.height = "8vw";
+        ava.style.borderRadius = "50%";
+        ava.style.top = "1vw";
+        ava.style.right = "1vw";
+        follow_a.style.top = "10vw";
+        follow_a.style.right = "1vw";
+        follow_a.style.fontSize = "1vw";
+        p1_show.style.display = "none";
+        p2_show.style.display = "block";
+    }
+    if(show_flug){
+        block_sum.style.top = "37.9vw";
+        block_sum.style.height = "7vw";
+        block_sum.style.zIndex = "1000";
+        block_img.style.display = "block";
+        ava.style.width = "3vw";
+        ava.style.height = "2.8vw";
+        ava.style.borderRadius = "0%";
+        ava.style.top = "0.5vw";
+        ava.style.right = "0.5vw";
+        follow_a.style.top = "3.7vw";
+        follow_a.style.right = "0.5vw";
+        follow_a.style.fontSize = "0.8vw";
+        p1_show.style.display = "block";
+        p2_show.style.display = "none";
+        show_flug = false;
+    }
 }
 
 

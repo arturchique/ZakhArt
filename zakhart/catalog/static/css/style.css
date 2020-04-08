@@ -50,12 +50,12 @@ a{
     display: none;
 }
 .image_good{
-    width:35vw;
-    height:28vw;
+    width:100%;
+    height:32vw;
     position: relative;
-    top: 2vw;
-    left:2vw;
-    z-index: 200;
+    top: 0vw;
+    left:0vw;
+    z-index: 0;
     transition: all 0.5s linear;
 
 }
@@ -73,7 +73,7 @@ a{
 .block_image{
     position: relative;
     left: 20vw;
-    top: 7vw;
+    top: 5.5vw;
     background-color: white;
     width: 40.5vw;
     height: 32vw;
@@ -83,7 +83,7 @@ a{
 .block_summary{
     position: absolute;
     left: 20vw;
-    top:39.4vw;
+    top:37.9vw;
     background-color: white;
     width: 40.5vw;
     height: 7vw;
@@ -111,6 +111,9 @@ a{
     font-size: 1vw;
     text-shadow: 5px 5px 10px black;
 }
+.p2_show{
+    display:none;
+}
 .face_auth{
     position: absolute;
     top:0.5vw;
@@ -120,6 +123,7 @@ a{
     background-color: #332928;
     margin: 0;
     padding: 0;
+    transition: all 1s linear;
 }
 .cost{
     color: #332928;
@@ -277,4 +281,50 @@ a{
     margin: 0;
     padding: 0;
     z-index:0;
+}
+.categories{
+    position: absolute;
+    right: 20vw;
+    top: 5.5vw;
+    width: 19vw;
+    height: 32vw;
+    margin: 0;
+    padding:0;
+    display: none;
+    list-style: none;
+}
+.categories li{
+    width: 100%;
+    height: 7.63vw;
+    margin-bottom: 0.5vw;
+    padding:0;
+}
+.categories li div{
+    float: left;
+    width: 9.25vw;
+    height: 7.63vw;
+    background-color: white;
+    text-align: center;
+    line-height: 7.63vw;
+    font-size: 1vw;
+    font-family: "ForestSmooth";
+    color: #332928;
+    transition: all 0.7s linear;
+}
+.categories li div:hover{
+    cursor: pointer;
+    background-color:  #332928;
+    color: white;
+}
+.cat1{
+    margin-right: 0.5vw;
+}
+.cat3{
+    margin-right: 0.5vw;
+}
+.cat5{
+    margin-right: 0.5vw;
+}
+.cat7{
+    margin-right: 0.5vw;
 }
