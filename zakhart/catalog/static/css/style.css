@@ -43,9 +43,101 @@ a{
     color: white;
     font-size: 3vh;
     font-family: "ForestSmooth";
-     text-shadow: 5px 5px 10px black;
+    text-shadow: 5px 5px 10px black;
 }
-
+.user_name{
+    color: white;
+    font-size: 3vh;
+    font-family: "ForestSmooth";
+    text-shadow: 5px 5px 10px black;
+}
+.block_login{
+    margin: 0;
+    padding: 0;
+    width: 70vw;
+    height: 100vh;
+    position: absolute;
+    top: 0vw;
+    left: 15vw;
+    background-color: #332928;
+    color: white;
+    font-size: 1.3vw;
+    font-family: "ForestSmooth";
+    text-shadow: 5px 5px 10px black;
+}
+.block_form_login{
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    top: 5.5vw;
+    left: 10vw;
+}
+.block_form_login{
+    line-height: 2vw;
+}
+.block_form_login a{
+    text-decoration-style: none;
+}
+.block_form_login tr td{
+    border: none;
+    outline: none;
+    width: 8vw;
+    height: 3.5vw;
+    margin-bottom: 5vw;
+}
+.block_form_login tr td input{
+    height: 2.5vw;
+    border: none;
+    outline: none;
+    background-color: white;
+    color: #332928;
+    font-size: 1vw;
+    font-family: "ForestSmooth";
+}
+.form_reset_password>input{
+    background-color: white;
+    color: #332928;
+    font-size: 1vw;
+    font-family: "ForestSmooth";
+    text-shadow: 5px 5px 10px rgb(0,0,0,0);
+    width: 10vw;
+    height:2vw;
+    border: none;
+    outline: none;
+    transition: all 0.7s linear;
+}
+.form_reset_password>input:hover{
+    background-color: #332928;
+    color: white;
+    cursor: pointer;
+}
+.form_reset_password p input{
+    height: 2.5vw;
+    border: none;
+    outline: none;
+    background-color: white;
+    color: #332928;
+    font-size: 1vw;
+    font-family: "ForestSmooth";
+}
+.submit_login{
+    background-color: white;
+    color: #332928;
+    font-size: 1vw;
+    font-family: "ForestSmooth";
+    text-shadow: 5px 5px 10px rgb(0,0,0,0);
+    width: 10vw;
+    height:2vw;
+    border: none;
+    outline: none;
+    transition: all 0.7s linear;
+    margin-top: 1vw;
+}
+.submit_login:hover{
+    background-color: #332928;
+    color: white;
+    cursor: pointer;
+}
 .arr{
     display: none;
 }
