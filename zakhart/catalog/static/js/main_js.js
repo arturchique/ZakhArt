@@ -31,6 +31,10 @@ let ava = document.getElementById("ava");
 let p1_show = document.getElementById("p1_sh");
 let p2_show = document.getElementById("p2_sh");
 let block_categories = document.getElementById("block_cat");
+let trans_anim1 = document.getElementById("transition_anim1");
+let trans_anim2 = document.getElementById("transition_anim2");
+let trans_anim3 = document.getElementById("transition_anim3");
+let trans_anim4 = document.getElementById("transition_anim4");
 
 k++;
 
@@ -86,9 +90,19 @@ element.onclick = function al(){
             block_img.style.opacity = "1";
             //анимация смены фотографий
         setTimeout(function(){
-            img.style.opacity = "0";
+            trans_anim1.style.width = "100%";
+            trans_anim3.style.width = "100%";
+            trans_anim2.style.width = "100%";
+            trans_anim4.style.width = "100%";
             setTimeout(function(){
-                img.style.opacity = "1";
+                trans_anim1.style.float = "right";
+                trans_anim2.style.float = "right";
+                trans_anim3.style.float = "right";
+                trans_anim4.style.float = "right";
+                trans_anim1.style.width = "0%";
+                trans_anim2.style.width = "0%";
+                trans_anim3.style.width = "0%";
+                trans_anim4.style.width = "0%";
             },500);
         },3500);
         setTimeout(function l(){
@@ -104,9 +118,23 @@ element.onclick = function al(){
                 }
             }
             setTimeout(function(){
-                img.style.opacity = "0";
+                trans_anim1.style.float = "left";
+                trans_anim1.style.width = "100%";
+                trans_anim2.style.float = "left";
+                 trans_anim2.style.width = "100%";
+                trans_anim3.style.float = "left";
+                trans_anim4.style.float = "left";
+                trans_anim3.style.width = "100%";
+                trans_anim4.style.width = "100%";
                 setTimeout(function(){
-                   img.style.opacity = "1";
+                    trans_anim1.style.float = "right";
+                    trans_anim2.style.float = "right";
+                    trans_anim3.style.float = "right";
+                    trans_anim4.style.float = "right";
+                    trans_anim1.style.width = "0%";
+                    trans_anim2.style.width = "0%";
+                    trans_anim3.style.width = "0%";
+                    trans_anim4.style.width = "0%";
                 },500);
             },3500);
             let timerid = setTimeout(l,4000);
@@ -169,8 +197,12 @@ show.onclick = function full(){
         follow_a.style.top = "10vw";
         follow_a.style.right = "1vw";
         follow_a.style.fontSize = "1vw";
-        p1_show.style.display = "none";
-        p2_show.style.display = "block";
+        setTimeout(function(){
+            p1_show.style.display = "none";
+            p2_show.style.display = "block";
+        },750);
+        show.style.transform = "rotateX(180deg)";
+         p2_show.style.transform = "rotateX(180deg)";
     }
     if(show_flug){
         block_sum.style.top = "37.9vw";
@@ -185,9 +217,14 @@ show.onclick = function full(){
         follow_a.style.top = "3.7vw";
         follow_a.style.right = "0.5vw";
         follow_a.style.fontSize = "0.8vw";
-        p1_show.style.display = "block";
-        p2_show.style.display = "none";
+        p2_show.style.transform = "rotateX(0deg)";
+         setTimeout(function(){
+            p1_show.style.display = "block";
+            p2_show.style.display = "none";
+        },750);
+        show.style.transform = "rotateX(360deg)";
         show_flug = false;
+
     }
 }
 
