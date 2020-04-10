@@ -90,21 +90,30 @@ element.onclick = function al(){
             block_img.style.opacity = "1";
             //анимация смены фотографий
         setTimeout(function(){
-            trans_anim1.style.width = "100%";
-            trans_anim3.style.width = "100%";
-            trans_anim2.style.width = "100%";
-            trans_anim4.style.width = "100%";
+            trans_anim1.style.opacity = "1";
             setTimeout(function(){
-                trans_anim1.style.float = "right";
-                trans_anim2.style.float = "right";
-                trans_anim3.style.float = "right";
-                trans_anim4.style.float = "right";
-                trans_anim1.style.width = "0%";
-                trans_anim2.style.width = "0%";
-                trans_anim3.style.width = "0%";
-                trans_anim4.style.width = "0%";
-            },500);
-        },3500);
+                trans_anim2.style.opacity = "1";
+            },200);
+            setTimeout(function(){
+                trans_anim3.style.opacity = "1";
+            },400);
+            setTimeout(function(){
+                trans_anim4.style.opacity = "1";
+            },600);
+
+            setTimeout(function(){
+                trans_anim1.style.opacity = "0";
+            setTimeout(function(){
+                trans_anim2.style.opacity = "0";
+            },200);
+            setTimeout(function(){
+                trans_anim3.style.opacity = "0";
+            },400);
+            setTimeout(function(){
+                trans_anim4.style.opacity = "0";
+            },600);
+            },1000);
+        },3000);
         setTimeout(function l(){
             if(block_img.style.display == "block"){
                 img.setAttribute("src", arr[k]);
@@ -117,26 +126,31 @@ element.onclick = function al(){
                     k = 0;
                 }
             }
+             setTimeout(function(){
+            trans_anim1.style.opacity = "1";
             setTimeout(function(){
-                trans_anim1.style.float = "left";
-                trans_anim1.style.width = "100%";
-                trans_anim2.style.float = "left";
-                 trans_anim2.style.width = "100%";
-                trans_anim3.style.float = "left";
-                trans_anim4.style.float = "left";
-                trans_anim3.style.width = "100%";
-                trans_anim4.style.width = "100%";
-                setTimeout(function(){
-                    trans_anim1.style.float = "right";
-                    trans_anim2.style.float = "right";
-                    trans_anim3.style.float = "right";
-                    trans_anim4.style.float = "right";
-                    trans_anim1.style.width = "0%";
-                    trans_anim2.style.width = "0%";
-                    trans_anim3.style.width = "0%";
-                    trans_anim4.style.width = "0%";
-                },500);
-            },3500);
+                trans_anim2.style.opacity = "1";
+            },200);
+            setTimeout(function(){
+                trans_anim3.style.opacity = "1";
+            },400);
+            setTimeout(function(){
+                trans_anim4.style.opacity = "1";
+            },600);
+
+            setTimeout(function(){
+                trans_anim1.style.opacity = "0";
+            setTimeout(function(){
+                trans_anim2.style.opacity = "0";
+            },200);
+            setTimeout(function(){
+                trans_anim3.style.opacity = "0";
+            },400);
+            setTimeout(function(){
+                trans_anim4.style.opacity = "0";
+            },600);
+            },1000);
+        },3000);
             let timerid = setTimeout(l,4000);
         },4000);
  },1500);
