@@ -12,8 +12,10 @@
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
 
 </head>
-
-<body class="main_image">
+<body class="mouse-parallax">
+<div class="main_image">
+    </div>
+<div class="cont">
         <ul class="sign">
             {% if user.is_authenticated %}
                 <li class="user_name">User: {{ user.get_username }}</li>
@@ -26,7 +28,7 @@
         <div class = "content">
             {% block content %}{% endblock %}
         </div>
-
+</div>
 <script type="text/javascript" src="{% static 'js/main_js.js' %}"></script>
 </body>
 </html>

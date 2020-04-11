@@ -39,6 +39,12 @@ let trans_anim4 = document.getElementById("transition_anim4");
 k++;
 
 //анимация кнопки
+let bg = document.querySelector('.main_image');
+window.addEventListener('mousemove', function(e) {
+    let x = e.clientX / window.innerWidth;
+    let y = e.clientY / window.innerHeight;
+    bg.style.transform = 'translate(-' + x * 25 + 'px, -' + y * 25 + 'px)';
+});
 
 let element = document.getElementById('circle');
 let my_time = 30;
@@ -112,7 +118,7 @@ element.onclick = function al(){
             setTimeout(function(){
                 trans_anim4.style.opacity = "0";
             },600);
-            },1000);
+            },1500);
         },3000);
         setTimeout(function l(){
             if(block_img.style.display == "block"){
@@ -149,10 +155,10 @@ element.onclick = function al(){
             setTimeout(function(){
                 trans_anim4.style.opacity = "0";
             },600);
-            },1000);
+            },1500);
         },3000);
-            let timerid = setTimeout(l,4000);
-        },4000);
+            let timerid = setTimeout(l,4400);
+        },4400);
  },1500);
 
 }
