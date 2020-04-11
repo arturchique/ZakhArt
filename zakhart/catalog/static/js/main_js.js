@@ -35,16 +35,11 @@ let trans_anim1 = document.getElementById("transition_anim1");
 let trans_anim2 = document.getElementById("transition_anim2");
 let trans_anim3 = document.getElementById("transition_anim3");
 let trans_anim4 = document.getElementById("transition_anim4");
+let white_block = document.getElementById("block2");
 
 k++;
 
 //анимация кнопки
-let bg = document.querySelector('.main_image');
-window.addEventListener('mousemove', function(e) {
-    let x = e.clientX / window.innerWidth;
-    let y = e.clientY / window.innerHeight;
-    bg.style.transform = 'translate(-' + x * 25 + 'px, -' + y * 25 + 'px)';
-});
 
 let element = document.getElementById('circle');
 let my_time = 30;
@@ -92,6 +87,8 @@ element.onclick = function al(){
         setTimeout(function(){
             block_img.style.display = "block";
             block_sum.style.display = "block";
+            element.style.height = "200vh";
+            white_block.style.display = "block";
             block_categories.style.display = "block";
             block_img.style.opacity = "1";
             //анимация смены фотографий
@@ -163,6 +160,15 @@ element.onclick = function al(){
 
 }
 
+//АНИМАЦИЯ ФОНА
+let bg = document.querySelector('.main_image');
+window.addEventListener('mousemove', function(e) {
+    let x = e.clientX / window.innerWidth;
+    let y = e.clientY / window.innerHeight;
+    if(!flag){
+        bg.style.transform = 'translate(-' + x * 17 + 'px, -' + y * 17 + 'px)';
+    }
+});
 
 let arrow1 = document.getElementById("arrow1");
 let arrow2 = document.getElementById("arrow2");
