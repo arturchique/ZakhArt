@@ -44,7 +44,7 @@ a{
     padding:0;
     display: flex;
     list-style: none;
-    position: absolute;
+    position: fixed;
     left:40vw;
     top: 2vh;
     z-index:100;
@@ -60,6 +60,7 @@ a{
     font-size: 3vh;
     font-family: "ForestSmooth";
     text-shadow: 5px 5px 10px black;
+    transition: all 0.5s linear;
 }
 .user_name{
     color: white;

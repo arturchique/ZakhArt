@@ -36,6 +36,8 @@ let trans_anim2 = document.getElementById("transition_anim2");
 let trans_anim3 = document.getElementById("transition_anim3");
 let trans_anim4 = document.getElementById("transition_anim4");
 let white_block = document.getElementById("block2");
+let sign1 = document.getElementById("sign1");
+let sign2 = document.getElementById("sign2");
 
 k++;
 
@@ -77,10 +79,12 @@ Idreq = requestAnimationFrame(animationRound);
 //анимация раскрытия и прочие при нажатии
 
 element.onclick = function al(){
-        element.style.borderRadius = "0%";
-        flag = true;
+        element.style.borderRadius = "0%"
         element.style.transform = "scale(" + 1 + " ," + 1 +")";
-        element.style.height = "100vh";
+        if(!flag){
+            element.style.height = "100vh";
+        }
+        flag = true;
         element.style.width = "70vw";
         element.style.left = "15vw";
         element.style.top = "0vh";
@@ -253,5 +257,35 @@ show.onclick = function full(){
 
     }
 }
+
+let block = document.getElementById("circle");
+
+
+document.addEventListener("wheel", function(event){
+    const blockID = "#block2";
+    const blockID2 = "#block_sum";
+    if(event.deltaY>0){
+        document.querySelector('' + blockID).scrollIntoView({
+            behavior: "smooth",
+            block: "start"
+        });
+        sign1.style.color = "#332928";
+        sign2.style.color = "#332928";
+        sign1.style.textShadow = "none";
+        sign2.style.textShadow = "none";
+    }
+    if(event.deltaY<0){
+        document.querySelector('' + blockID2).scrollIntoView({
+            behavior: "smooth",
+            block: "end"
+        });
+        sign1.style.color = "white";
+        sign2.style.color = "white";
+        sign1.style.textShadow = " 5px 5px 10px black";
+        sign2.style.textShadow = " 5px 5px 10px black";
+    }
+});
+
+
 
 

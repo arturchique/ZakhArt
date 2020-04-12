@@ -12,22 +12,23 @@
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
 
 </head>
-<body>
+<body id="block">
 
 <div class="cont">
-        <ul class="sign">
+        <ul class="sign" id="sign">
             {% if user.is_authenticated %}
                 <li class="user_name">User: {{ user.get_username }}</li>
                 <li><a href="{% url 'logout'%}?next={{request.path}}">Logout</a></li>
                 {% else %}
-                <li><a href="{% url 'login'%}?next=/catalog">Sign in</a></li>
-               <li><a href="/catalog/register">Sign up</a></li>
+                <li><a href="{% url 'login'%}?next=/catalog" id="sign1">Sign in</a></li>
+               <li><a href="/catalog/register" id="sign2">Sign up</a></li>
             {% endif %}
         </ul>
         <div class = "content">
             {% block content %}{% endblock %}
         </div>
 </div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-mousewheel/3.1.13/jquery.mousewheel.js"></script>
 <script type="text/javascript" src="{% static 'js/main_js.js' %}"></script>
 </body>
 </html>
