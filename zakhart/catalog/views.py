@@ -12,6 +12,7 @@ def index(request):
     summary_list = [ob.summary for ob in Product.objects.all()]
     author_list = [ob.author for ob in Product.objects.all()]
     cost_list = [ob.cost for ob in Product.objects.all()]
+    genre_list = [ob.genre for ob in Product.objects.all()]
     products = Product.objects.all()
     return render(
         request,
@@ -24,6 +25,7 @@ def index(request):
             'url_list': url_list,
             'cost_list': cost_list,
             'author_list': author_list,
+            'genre_list': genre_list,
         },
     )
 
